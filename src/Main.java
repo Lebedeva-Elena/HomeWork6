@@ -16,14 +16,14 @@ public class Main {
         int deposit = 15000;
 
         int goal = 2459000;
-        int i = 0;
+        int month = 0;
         int total = 0;
 
         while (deposit < goal) {
             goal = goal - deposit;
-            i = i + 1;
-            total = i * deposit;
-            System.out.println("Месяц " + i + " сумма накоплений равна " + total + " рублей");
+            month = month + 1;
+            total = month * deposit;
+            System.out.println("Месяц " + month + " сумма накоплений равна " + total + " рублей");
         }
     }
 
@@ -48,17 +48,13 @@ public class Main {
         System.out.println("Задача 3");
         int Y = 12_000_000;
         int fertilityThousandPeople = 17;
-        int birthRatePerPopulation = (Y / 1000) * fertilityThousandPeople;
         int mortalityThousandPeople = 8;
-        int mortalityPerPopulation = (Y / 1000) * mortalityThousandPeople;
         int X = 0;
         int howYears = 10;
-        int year = 0;
-        int difference = birthRatePerPopulation - mortalityPerPopulation;
 
 
-        for (year = 1; year <= 10; year++) {
-            Y = Y + difference;
+        for (int year = 1; year <= howYears; year++) {
+            Y = Y + Y * fertilityThousandPeople / 1000 - Y * mortalityThousandPeople / 1000;
             System.out.println("Год " + year + " численность населения составляет " + Y);
         }
     }
@@ -97,7 +93,9 @@ public class Main {
         float deposit = 15000;
         int i = 0;
         float percent = 0.07F;
-        for (i = 1; i <= 108; i++) {
+        int year = 9;
+
+        for (i = 1; i <= year * 12; i++) {
             deposit = deposit + deposit * percent;
             if (i % 6 == 0) {
 
@@ -113,7 +111,7 @@ public class Main {
 
         if (friday >= 1 && friday <= 7) {
 
-            for (friday = 1; friday <= daysMonth; friday += 7) {
+            for (; friday <= daysMonth; friday += 7) {
                 System.out.println("Сегодня пятница " + friday + "-е число." + " необходимо подготовить отчет");
             }
         } else {
@@ -123,10 +121,12 @@ public class Main {
 
     public static void task8() {
         System.out.println("Задача 8");
-        int i = 0;
-        for (; i < 2123; i += 79) {
-            if (i > 1823) {
-                System.out.println(i);
+        int year = 0;
+        int currentYear = 2023;
+
+        for (; year < currentYear + 100; year += 79) {
+            if (year > currentYear - 200) {
+                System.out.println(year);
             }
         }
 
