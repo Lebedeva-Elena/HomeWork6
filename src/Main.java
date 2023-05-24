@@ -62,14 +62,14 @@ public class Main {
     public static void task4() {
         System.out.println("Задача 4");
         float deposit = 15000;
-        int i = 0;
+        int month = 0;
         float percent = 0.07F;
         float goal = 12_000_000F;
 
         while (deposit < goal) {
             deposit = deposit + deposit * percent;
-            i = i + 1;
-            System.out.println("В месяце " + i + " накоплено " + deposit);
+            month = month + 1;
+            System.out.println("В месяце " + month + " накоплено " + deposit);
 
         }
     }
@@ -77,12 +77,14 @@ public class Main {
     public static void task5() {
         System.out.println("Задача 5");
         double deposit = 15000;
-        int i = 1;
-        for (; deposit < 12_000_000; i++) {
-            deposit = deposit + deposit * 0.07;
-            if (i % 6 == 0) {
+        int goal = 12_000_000;
+        int month = 1;
+        double percent = 7;
+        for (; deposit < goal; month++) {
+            deposit = deposit + deposit * 7/100;
+            if (month % 6 == 0) {
 
-                System.out.println("Сумма " + deposit + " количество месяцев  " + i);
+                System.out.println("Сумма " + deposit + " количество месяцев  " + month);
             }
         }
 
@@ -91,15 +93,14 @@ public class Main {
     public static void task6() {
         System.out.println("Задача 6");
         float deposit = 15000;
-        int i = 0;
         float percent = 0.07F;
         int year = 9;
 
-        for (i = 1; i <= year * 12; i++) {
+        for (int month = 1; month <= year * 12; month++) {
             deposit = deposit + deposit * percent;
-            if (i % 6 == 0) {
+            if (month % 6 == 0) {
 
-                System.out.println("В месяце " + i + " накоплено " + deposit);
+                System.out.println("В месяце " + month + " накоплено " + deposit);
             }
         }
     }
